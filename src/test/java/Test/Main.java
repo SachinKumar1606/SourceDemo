@@ -10,8 +10,12 @@ public class Main extends Base {
     Base log = new Base();
 
     @Test
-    void checkLogin() throws IOException {
-        log.login();
+    void correctDetails() throws IOException {
+        log.loginPass();
     }
 
+    @Test
+    void incorrectDetails() throws IOException {
+        log.loginFail();
+    }
 }
