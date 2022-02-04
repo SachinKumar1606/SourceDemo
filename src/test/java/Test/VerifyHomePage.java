@@ -1,9 +1,9 @@
 package Test;
 
-import org.testng.annotations.BeforeTest;
+import Pages.HomePageStdUser;
 import org.testng.annotations.Test;
 
-public class Main extends Base {
+public class VerifyHomePage extends Base {
 
     @Test
     public void Test1(){
@@ -11,9 +11,7 @@ public class Main extends Base {
     }
 
     @Test (dependsOnMethods = "Test1")
-    public void Test2() throws InterruptedException {
-        Base.logoutM();
+    public void checkLink(){
+        HomePageStdUser.setBagPack();
     }
-
-
 }
