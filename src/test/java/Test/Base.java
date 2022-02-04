@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class Base {
 
-    @Test
+//    @Test
     public void LoginStdUser(){
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
