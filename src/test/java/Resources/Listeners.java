@@ -18,7 +18,7 @@ public class Listeners extends TestListenerAdapter{
 
     public void onStart(ITestContext testContext)
     {
-        htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/loginReport2.html");
+        htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/loginReportNew.html");
         //System.out.println(System.getProperty("user.dir")+"/Reports/myReport.html");
         System.out.println("On start");
         htmlReporter.config().setDocumentTitle("Test Report");

@@ -1,20 +1,17 @@
 package Test;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 public class Main extends Base {
 
     Base log = new Base();
 
     @Test
-    void correctDetails() throws IOException {
-        log.loginPass();
+    public void Test1(){
+       log.LoginStdUser();
     }
 
-    @Test
-    void incorrectDetails() throws IOException {
-        log.loginFail();
-    }
+
+
 }
