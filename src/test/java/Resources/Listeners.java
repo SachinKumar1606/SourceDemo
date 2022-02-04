@@ -1,4 +1,4 @@
-package Resorces;
+package Resources;
 
 
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;

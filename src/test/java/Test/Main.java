@@ -1,6 +1,5 @@
 package Test;
 
-import Base.Base;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
