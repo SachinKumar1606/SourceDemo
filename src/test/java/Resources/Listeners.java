@@ -21,7 +21,7 @@ public class Listeners extends TestListenerAdapter{
         htmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/loginReportNew.html");
         //System.out.println(System.getProperty("user.dir")+"/Reports/myReport.html");
         System.out.println("On start");
-        htmlReporter.config().setDocumentTitle("Test Report");
+        htmlReporter.config().setDocumentTitle("Report");
         htmlReporter.config().setReportName("Testing Report");
         htmlReporter.config().setTheme(Theme.DARK);
 
@@ -29,8 +29,8 @@ public class Listeners extends TestListenerAdapter{
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host name","localhost");
         extent.setSystemInfo("Enviornment", "QA");
-        extent.setSystemInfo("Project Name", "Orange HRM");
-        extent.setSystemInfo("user", "Sampada");
+        extent.setSystemInfo("Project Name", "SourceDemo");
+        extent.setSystemInfo("user", "Sachin Kumar");
 
 
     }
