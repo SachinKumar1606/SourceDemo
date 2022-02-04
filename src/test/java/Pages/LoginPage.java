@@ -3,7 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends HomePageStdUser {
 
     WebDriver driver;
 
@@ -11,9 +11,10 @@ public class LoginPage {
     By password = By.id("password");
     By submit = By.id("login-button");
 
-    public LoginPage(WebDriver driver){
-        this.driver = driver;
+    public LoginPage(WebDriver driver) {
+        super(driver);
     }
+
 
     public void typeUsername(){
         driver.findElement(username).sendKeys("standard_user");

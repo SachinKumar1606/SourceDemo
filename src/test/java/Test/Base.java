@@ -21,8 +21,12 @@ public class Base {
         page.clickSubmit();
         String act = driver.getCurrentUrl();
         String exp = "https://www.saucedemo.com/inventory.html";
+        page.logout();
         driver.close();
         Assert.assertEquals(act,exp);
     }
+
+
+
 
 }
