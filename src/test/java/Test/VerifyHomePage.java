@@ -12,7 +12,37 @@ public class VerifyHomePage extends Base {
     }
 
     @Test (dependsOnMethods = "Test1")
-    public void checkLink(){
+    public void checkLink1(){
         HomePageStdUser.setBagPack();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "Test1")
+    public void checkLink2(){
+        HomePageStdUser.setBikeLight();
+        driver.navigate().back();
+    }
+    @Test (dependsOnMethods = "Test1")
+    public void checkLink3(){
+        HomePageStdUser.setJacket();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "Test1")
+    public void checkLink4(){
+        HomePageStdUser.setOnesie();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "Test1")
+    public void checkLink5(){
+        HomePageStdUser.settShirt();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "Test1")
+    public void checkLink6(){
+        HomePageStdUser.settRed();
+        driver.navigate().back();
     }
 }

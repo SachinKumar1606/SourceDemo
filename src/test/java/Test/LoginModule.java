@@ -1,10 +1,9 @@
 package Test;
 
 import Pages.LoginPage;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Main extends Base {
+public class LoginModule extends Base {
 
     @Test
     public void Test1(){

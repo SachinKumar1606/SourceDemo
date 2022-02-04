@@ -36,6 +36,48 @@ public class HomePageStdUser {
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
+    public static void setBikeLight(){
+        driver.findElement(bikeLight).click();
+        String exp = "https://www.saucedemo.com/inventory-item.html?id=0";
+        String act = driver.getCurrentUrl();
+        soft.assertEquals(act,exp);
+        soft.assertAll();
+    }
+    public static void settShirt(){
+        driver.findElement(tShirt).click();
+        String exp = "https://www.saucedemo.com/inventory-item.html?id=1";
+        String act = driver.getCurrentUrl();
+        soft.assertEquals(act,exp);
+        soft.assertAll();
+    }
+    public static void setJacket(){
+        driver.findElement(jacket).click();
+        String exp = "https://www.saucedemo.com/inventory-item.html?id=5";
+        String act = driver.getCurrentUrl();
+        soft.assertEquals(act,exp);
+        soft.assertAll();
+    }
+    public static void settRed(){
+        driver.findElement(tRed).click();
+        String exp = "https://www.saucedemo.com/inventory-item.html?id=3";
+        String act = driver.getCurrentUrl();
+        soft.assertEquals(act,exp);
+        soft.assertAll();
+    }
+    public static void setOnesie(){
+        driver.findElement(onesie).click();
+        String exp = "https://www.saucedemo.com/inventory-item.html?id=2";
+        String act = driver.getCurrentUrl();
+        soft.assertEquals(act,exp);
+        soft.assertAll();
+    }
+//    public static void setBagPack(){
+//        driver.findElement(bagPack).click();
+//        String exp = "https://www.saucedemo.com/inventory-item.html?id=4";
+//        String act = driver.getCurrentUrl();
+//        soft.assertEquals(act,exp);
+//        soft.assertAll();
+//    }
 
 
     public static void setLogout() throws InterruptedException {
