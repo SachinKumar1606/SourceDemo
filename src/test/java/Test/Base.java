@@ -26,23 +26,6 @@ public class Base {
     public void closeBrowser(){
         driver.close();
     }
-
-    public static void LoginStdUser(){
-
-        LoginPage.typeUsername();
-        LoginPage.typePassword();
-        LoginPage.clickSubmit();
-        String act = driver.getCurrentUrl();
-        String exp = "https://www.saucedemo.com/inventory.html";
-        //driver.close();
-        Assert.assertEquals(act,exp);
-    }
-
-    public static void logoutM() throws InterruptedException {
-        HomePageStdUser.setLogout();
-    }
-
-
 }
 
 

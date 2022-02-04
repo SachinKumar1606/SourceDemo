@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class LoginPage{
 
@@ -27,5 +28,20 @@ public class LoginPage{
 
     public static void clickSubmit(){
         driver.findElement(submit).click();
+    }
+
+    public static void LoginStdUser(){
+
+        LoginPage.typeUsername();
+        LoginPage.typePassword();
+        LoginPage.clickSubmit();
+        String act = driver.getCurrentUrl();
+        String exp = "https://www.saucedemo.com/inventory.html";
+        //driver.close();
+        Assert.assertEquals(act,exp);
+    }
+
+    public static void logoutM() throws InterruptedException {
+        HomePageStdUser.setLogout();
     }
 }
