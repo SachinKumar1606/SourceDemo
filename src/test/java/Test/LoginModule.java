@@ -7,12 +7,12 @@ public class LoginModule extends Base {
 
     @Test
     public void Test1(){
-        LoginPage.LoginStdUser();
+        pageFactory.getLoginPage().LoginStdUser();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void Test2() throws InterruptedException {
-        LoginPage.logoutM();
+       pageFactory.getHomePage().setLogout();
     }
 
 

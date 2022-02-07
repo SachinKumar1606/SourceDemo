@@ -1,25 +1,41 @@
 package Test;
 
-import Pages.HomePageStdUser;
-import Pages.LoginPage;
+import Pages.Pagee;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 
 public class Base {
 
-    static WebDriver driver;
+    protected Pagee pageFactory;
+
+    WebDriver driver;
+    public static Properties prop;
+    String path;
 
     @BeforeClass
-    void launchBrowser(){
+    void launchBrowser() throws FileNotFoundException {
+        path = System.getProperty("user.dir")+"\\Config\\config.properties";
+        System.out.println(path);
+        try {
+            FileInputStream file = new FileInputStream(path);
+            prop = new Properties();
+            prop.load(file);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        LoginPage page = new LoginPage(driver);
-        HomePageStdUser hpage = new HomePageStdUser(driver);
-        driver.navigate().to("https://www.saucedemo.com/");
+        pageFactory = new Pagee(driver);
+        driver.get(prop.getProperty("URL"));
     }
 
     @AfterClass

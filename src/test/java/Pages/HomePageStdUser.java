@@ -1,8 +1,9 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
 import java.util.Iterator;
@@ -13,208 +14,253 @@ import static java.time.Duration.*;
 public class HomePageStdUser {
 
     public static WebDriver driver;
-    //xpaths of links
-    public static By bagPack = By.partialLinkText("Sauce Labs Backpack");
-    public static By bikeLight = By.partialLinkText("Sauce Labs Bike Light");
-    public static By tShirt = By.partialLinkText("Sauce Labs Bolt T-Shirt");
-    public static By jacket = By.partialLinkText("Sauce Labs Fleece Jacket");
-    public static By onesie = By.partialLinkText("Sauce Labs Onesie");
-    public static By tRed = By.partialLinkText("Test.allTheThings() T-Shirt (Red)");
-    //xpath of social media sites
-    public static By twitter = By.partialLinkText("Twitter");
-    public static By facebook = By.partialLinkText("Facebook");
-    public static By linkedIn = By.partialLinkText("LinkedIn");
-    //xpath of cart
-    public static By cart = By.className("shopping_cart_link");
-    //xpath of menu buton and there links
-    public static By menu = By.id("react-burger-menu-btn");
-    public static By allItem = By.partialLinkText("All Items");
-    public static By logout = By.id("logout_sidebar_link");
-    public static By resetApp = By.partialLinkText("Reset App State");
-    //xpath of images
-    public static By bagPackPic = By.id("item_4_img_link");
-    public static By bikeLightPic = By.id("item_0_img_link");
-    public static By tShirtPic = By.id("item_1_img_link");
-    public static By jacketPic = By.id("item_5_img_link");
-    public static By onesiePic = By.id("item_2_img_link");
-    public static By tRedPic = By.id("item_3_title_link");
 
-    //xpath add to cart
-    public static By bagPackCart = By.id("add-to-cart-sauce-labs-backpack");
-    public static By bikeLightCart = By.id("add-to-cart-sauce-labs-bike-light");
-    public static By tShirtCart = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
-    public static By jacketCart = By.id("add-to-cart-sauce-labs-fleece-jacket");
-    public static By onesieCart = By.id("add-to-cart-sauce-labs-onesie");
-    public static By tRedCart = By.id("add-to-cart-test.allthethings()-t-shirt-(red)");
+    //Locators of links
 
-    //xpath add to cartRemove
-    public static By bagPackRemove = By.id("remove-sauce-labs-backpack");
-    public static By bikeLightRemove = By.id("remove-sauce-labs-bike-light");
-    public static By tShirtRemove = By.id("remove-sauce-labs-bolt-t-shirt");
-    public static By jacketRemove = By.id("remove-sauce-labs-fleece-jacket");
-    public static By onesieRemove = By.id("remove-sauce-labs-onesie");
-    public static By tRedRemove = By.id("remove-test.allthethings()-t-shirt-(red)");
+    @FindBy(partialLinkText="Sauce Labs Backpack")
+    private WebElement bagPack;
+    @FindBy(partialLinkText="Sauce Labs Bike Light")
+    private WebElement bikeLight;
+    @FindBy(partialLinkText="Sauce Labs Bolt T-Shirt")
+    private WebElement tShirt;
+    @FindBy(partialLinkText="Sauce Labs Fleece Jacket")
+    private WebElement jacket;
+    @FindBy(partialLinkText="Sauce Labs Onesie")
+    private WebElement onesie;
+    @FindBy(partialLinkText="Test.allTheThings() T-Shirt (Red)")
+    private WebElement tRed;
+
+    //Locators of social media sites
+    @FindBy(partialLinkText="Twitter")
+    private WebElement twitter;
+    @FindBy(partialLinkText="Facebook")
+    private WebElement facebook;
+    @FindBy(partialLinkText="LinkedIn")
+    private WebElement linkedIn;
+
+    //Locators of cart
+    @FindBy(className = "shopping_cart_link")
+    WebElement cart;
+
+    //Locators of menu buton and there links
+    @FindBy(id="react-burger-menu-btn")
+    private WebElement menu;
+    @FindBy(id="logout_sidebar_link")
+    private WebElement allItem;
+    @FindBy(id="logout_sidebar_link")
+    private WebElement logout;
+    @FindBy(partialLinkText = "Reset App State")
+    private WebElement resetApp;
+
+    //Locators of images
+    @FindBy(id="item_4_img_link")
+    private WebElement bagPackPic;
+    @FindBy(id="item_0_img_link")
+    private WebElement bikeLightPic;
+    @FindBy(id="item_1_img_link")
+    private WebElement tShirtPic;
+    @FindBy(id="item_5_img_link")
+    private WebElement jacketPic;
+    @FindBy(id="item_2_img_link")
+    private WebElement onesiePic;
+    @FindBy(id="item_3_title_link")
+    private WebElement jactRedPicketPic;
+
+    //Locators add to cart
+
+    @FindBy(id="add-to-cart-sauce-labs-backpack")
+    private WebElement bagPackCart;
+    @FindBy(id="add-to-cart-sauce-labs-bike-light")
+    private WebElement bikeLightCart;
+    @FindBy(id="add-to-cart-sauce-labs-bolt-t-shirt")
+    private WebElement tShirtCart;
+    @FindBy(id="add-to-cart-sauce-labs-fleece-jacket")
+    private WebElement jacketCart;
+    @FindBy(id="add-to-cart-sauce-labs-onesie")
+    private WebElement onesieCart;
+    @FindBy(id="add-to-cart-test.allthethings()-t-shirt-(red)")
+    private WebElement tRedCart;
+
+    //Locators add to cartRemove
+
+    @FindBy(id="remove-sauce-labs-backpack")
+    private WebElement bagPackRemove;
+    @FindBy(id="remove-sauce-labs-bike-light")
+    private WebElement bikeLightRemove;
+    @FindBy(id="remove-sauce-labs-bolt-t-shirt")
+    private WebElement tShirtRemove;
+    @FindBy(id="remove-sauce-labs-fleece-jacket")
+    private WebElement jacketRemove;
+    @FindBy(id="remove-sauce-labs-onesie")
+    private WebElement onesieRemove;
+    @FindBy(id="remove-test.allthethings()-t-shirt-(red)")
+    private WebElement tRedRemove;
 
     public HomePageStdUser(WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     static SoftAssert soft = new SoftAssert();
 
     //Link check
 
-    public static void setBagPack(){
-        driver.findElement(bagPack).click();
+    public void setBagPack(){
+        bagPack.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=4";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setBikeLight(){
-        driver.findElement(bikeLight).click();
+    public void setBikeLight(){
+        bikeLight.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=0";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settShirt(){
-        driver.findElement(tShirt).click();
+    public void settShirt(){
+        tShirt.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=1";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setJacket(){
-        driver.findElement(jacket).click();
+    public void setJacket(){
+        jacket.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=5";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settRed(){
-        driver.findElement(tRed).click();
+    public void settRed(){
+        tRed.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=3";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setOnesie(){
-        driver.findElement(onesie).click();
+    public void setOnesie(){
+        onesie.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=2";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setLogout(){
-        driver.findElement(menu).click();
+    //Logout method
+    public void setLogout(){
+        menu.click();
         driver.manage().timeouts().implicitlyWait(ofSeconds(10));
-        driver.findElement(logout).click();
+        logout.click();
     }
 
-    public static void setBagPackPic(){
-        driver.findElement(bagPackPic).click();
+    //Picture check function
+    public void setBagPackPic(){
+        bagPackPic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=4";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setBikeLightPic(){
-        driver.findElement(bikeLightPic).click();
+    public void setBikeLightPic(){
+        bikeLightPic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=0";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settShirtPic(){
-        driver.findElement(tShirtPic).click();
+    public void settShirtPic(){
+        tShirtPic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=1";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setJacketPic(){
-        driver.findElement(jacketPic).click();
+    public void setJacketPic(){
+        jacketPic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=5";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settRedPic(){
-        driver.findElement(tRedPic).click();
+    public void settRedPic(){
+        jactRedPicketPic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=3";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setOnesiePic(){
-        driver.findElement(onesiePic).click();
+    public void setOnesiePic(){
+        onesiePic.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=2";
         String act = driver.getCurrentUrl();
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setBagPackCart(){
-        driver.findElement(bagPackCart).click();
-        String act = driver.findElement(bagPackRemove).getText();
+    //Add to cart function
+    public void setBagPackCart(){
+        bagPackCart.click();
+        String act = bagPackRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setBikeLightCart(){
-        driver.findElement(bikeLightCart).click();
-        String act = driver.findElement(bikeLightRemove).getText();
+    public void setBikeLightCart(){
+        bikeLightCart.click();
+        String act =  bikeLightRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settShirtCart(){
-        driver.findElement(tShirtCart).click();
-        String act = driver.findElement(tShirtRemove).getText();
+    public void settShirtCart(){
+        tShirtCart.click();
+        String act = tShirtRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setJacketCart(){
-        driver.findElement(jacketCart).click();
-        String act = driver.findElement(jacketRemove).getText();
+    public void setJacketCart(){
+        jacketCart.click();
+        String act = jacketRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void settRedCart(){
-        driver.findElement(tRedCart).click();
-        String act = driver.findElement(tRedRemove).getText();
+    public void settRedCart(){
+        tRedCart.click();
+        String act = tRedRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setOnesieCart(){
-        driver.findElement(onesieCart).click();
-        String act = driver.findElement(onesieRemove).getText();
+    public void setOnesieCart(){
+        onesieCart.click();
+        String act = onesieRemove.getText();
         String exp = "REMOVE";
         soft.assertEquals(act,exp);
         soft.assertAll();
     }
 
-    public static void setTwitter(){
-        driver.findElement(twitter).click();
+    //Link check if social media accounts.
+    public void setTwitter(){
+        twitter.click();
         String parent=driver.getWindowHandle();
         Set<String> s=driver.getWindowHandles();
         // Now iterate using Iterator
@@ -230,8 +276,8 @@ public class HomePageStdUser {
         String exp = "https://twitter.com/saucelabs";
     }
 
-    public static void setFacebook(){
-        driver.findElement(facebook).click();
+    public void setFacebook(){
+        facebook.click();
         String parent=driver.getWindowHandle();
         Set<String> s=driver.getWindowHandles();
         // Now iterate using Iterator
@@ -247,8 +293,8 @@ public class HomePageStdUser {
         String exp = "https://www.facebook.com/saucelabs";
     }
 
-    public static void setLinkedIn(){
-        driver.findElement(linkedIn).click();
+    public void setLinkedIn(){
+        linkedIn.click();
         String parent=driver.getWindowHandle();
         Set<String> s=driver.getWindowHandles();
         // Now iterate using Iterator
