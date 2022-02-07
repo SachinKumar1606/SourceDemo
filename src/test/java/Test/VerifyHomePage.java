@@ -4,11 +4,13 @@ import Pages.HomePageStdUser;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class VerifyHomePage extends Base {
 
     @Test
-    public void Test1(){
-        pageFactory.getLoginPage().LoginStdUser();
+    public void Test1() throws IOException {
+        pageFactory.getLoginPage().LoginModule();
     }
 
     @Test (dependsOnMethods = "Test1")
