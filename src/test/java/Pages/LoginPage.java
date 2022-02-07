@@ -2,45 +2,37 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class LoginPage{
+public class LoginPage {
+    WebDriver driver;
 
-    static WebDriver driver;
+    @FindBy (id="user-name")
+    private WebElement username;
+    @FindBy (id="password")
+    private
+    WebElement password;
+    @FindBy (id="login-button")
+    private
+    WebElement submit;
 
-    static By username = By.id("user-name");
-    static By password = By.id("password");
-    static By submit = By.id("login-button");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+       this.driver = driver;
+       PageFactory.initElements(driver, this);
     }
 
-
-    public static void typeUsername(){
-        driver.findElement(username).sendKeys("standard_user");
-    }
-
-    public static void typePassword(){
-        driver.findElement(password).sendKeys("secret_sauce");
-    }
-
-    public static void clickSubmit(){
-        driver.findElement(submit).click();
-    }
-
-    public static void LoginStdUser(){
-
-        LoginPage.typeUsername();
-        LoginPage.typePassword();
-        LoginPage.clickSubmit();
+    public void LoginStdUser(){
+        username.sendKeys("standard_user");
+        password.sendKeys("secret_sauce");
+        submit.click();
         String act = driver.getCurrentUrl();
         String exp = "https://www.saucedemo.com/inventory.html";
         //driver.close();
         Assert.assertEquals(act,exp);
     }
 
-    public static void logoutM() throws InterruptedException {
-        HomePageStdUser.setLogout();
-    }
 }

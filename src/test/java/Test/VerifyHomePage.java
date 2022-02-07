@@ -8,120 +8,120 @@ public class VerifyHomePage extends Base {
 
     @Test
     public void Test1(){
-        LoginPage.LoginStdUser();
+        pageFactory.getLoginPage().LoginStdUser();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkPic1(){
-        HomePageStdUser.setBagPackPic();
+        pageFactory.getHomePage().setBagPackPic();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkPic2(){
-        HomePageStdUser.setBikeLightPic();
+        pageFactory.getHomePage().setBikeLightPic();
         driver.navigate().back();
     }
     @Test (dependsOnMethods = "Test1")
     public void checkPic3(){
-        HomePageStdUser.setJacketPic();
+        pageFactory.getHomePage().setJacketPic();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkPic4(){
-        HomePageStdUser.setOnesiePic();
+        pageFactory.getHomePage().setOnesiePic();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkPic5(){
-        HomePageStdUser.settShirtPic();
+        pageFactory.getHomePage().settShirtPic();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkPic6(){
-        HomePageStdUser.settRedPic();
+        pageFactory.getHomePage().settRedPic();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLink1(){
-        HomePageStdUser.setBagPack();
+        pageFactory.getHomePage().setBagPack();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLink2(){
-        HomePageStdUser.setBikeLight();
+        pageFactory.getHomePage().setBikeLight();
         driver.navigate().back();
     }
     @Test (dependsOnMethods = "Test1")
     public void checkLink3(){
-        HomePageStdUser.setJacket();
+        pageFactory.getHomePage().setJacket();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLink4(){
-        HomePageStdUser.setOnesie();
+        pageFactory.getHomePage().setOnesie();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLink5(){
-        HomePageStdUser.settShirt();
+        pageFactory.getHomePage().settShirt();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLink6(){
-        HomePageStdUser.settRed();
+        pageFactory.getHomePage().settRed();
         driver.navigate().back();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkCart1(){
-        HomePageStdUser.setBagPackCart();
+        pageFactory.getHomePage().setBagPackCart();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkCart2(){
-        HomePageStdUser.setBikeLightCart();
+        pageFactory.getHomePage().setBikeLightCart();
     }
     @Test (dependsOnMethods = "Test1")
     public void checkCart3(){
-        HomePageStdUser.setJacketCart();
+        pageFactory.getHomePage().setJacketCart();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkCart4(){
-        HomePageStdUser.setOnesieCart();
+        pageFactory.getHomePage().setOnesieCart();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkCart5(){
-        HomePageStdUser.settShirtCart();
+        pageFactory.getHomePage().settShirtCart();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkCart6() {
-        HomePageStdUser.settRedCart();
+        pageFactory.getHomePage().settRedCart();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkLinkedIn(){
-        HomePageStdUser.setLinkedIn();
+        pageFactory.getHomePage().setLinkedIn();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkTwitter() {
-        HomePageStdUser.setTwitter();
+        pageFactory.getHomePage().setTwitter();
     }
 
     @Test (dependsOnMethods = "Test1")
     public void checkFacebook() {
-        HomePageStdUser.setFacebook();
+        pageFactory.getHomePage().setFacebook();
     }
 }
