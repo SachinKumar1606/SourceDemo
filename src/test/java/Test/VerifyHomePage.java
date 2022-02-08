@@ -4,10 +4,12 @@ import Pages.HomePageStdUser;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class VerifyHomePage extends Base {
 
     @Test
-    public void Test1(){
+    public void Test1() throws IOException {
         pageFactory.getLoginPage().LoginStdUser();
     }
 
