@@ -10,7 +10,7 @@ public class VerifyHomePage extends Base {
 
     @Test
     public void Test1() throws IOException {
-        pageFactory.getLoginPage().LoginModule();
+        pageFactory.getLoginPage().LoginStdUser();
     }
 
     @Test (dependsOnMethods = "Test1")
