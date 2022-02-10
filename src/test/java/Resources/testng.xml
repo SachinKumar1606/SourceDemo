@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <listener class-name="Resources.Listeners"></listener>
+        <listener class-name="Resources.Listeners"/>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="C:/Users/SachinKumar/Documents/Sachin Kumar/Projects/SourceDemo/src/test/java">
