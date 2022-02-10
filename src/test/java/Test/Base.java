@@ -9,6 +9,7 @@ import org.testng.annotations.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 public class Base {
@@ -23,6 +24,7 @@ public class Base {
     void launchBrowser() throws FileNotFoundException {
         path = System.getProperty("user.dir")+"\\Config\\config.properties";
         System.out.println(path);
+
         try {
             FileInputStream file = new FileInputStream(path);
             prop = new Properties();
@@ -36,6 +38,7 @@ public class Base {
         driver = new ChromeDriver();
         pageFactory = new Pagee(driver);
         driver.get(prop.getProperty("URL"));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterClass

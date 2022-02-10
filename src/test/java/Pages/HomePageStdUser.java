@@ -105,6 +105,10 @@ public class HomePageStdUser {
 
     //Link check
 
+    public void setCart(){
+        cart.click();
+    }
+
     public void setBagPack(){
         bagPack.click();
         String exp = "https://www.saucedemo.com/inventory-item.html?id=4";
