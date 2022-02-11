@@ -9,6 +9,7 @@
         <classes>
             <class name="Test.LoginModule"/>
             <class name="Test.VerifyHomePage"/>
+            <class name="Test.VerifyCartPage"/>
         </classes>
     </test>
 </suite>
