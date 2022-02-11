@@ -88,4 +88,130 @@ public class VerifyCartPage extends Base {
         pageFactory.getCartPage().setRemove();
         driver.navigate().back();
     }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove1() throws InterruptedException {
+        pageFactory.getHomePage().setBagPackCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove2(){
+        pageFactory.getHomePage().setBikeLightCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove3(){
+        pageFactory.getHomePage().settRedCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove4(){
+        pageFactory.getHomePage().settShirtCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove5(){
+        pageFactory.getHomePage().setJacketCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkRemove6(){
+        pageFactory.getHomePage().setOnesieCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setRemove();
+        pageFactory.getCartPage().setHome();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart1() {
+        pageFactory.getHomePage().setBagPackCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart(){
+        pageFactory.getHomePage().setBikeLightCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart3(){
+        pageFactory.getHomePage().settRedCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart4(){
+        pageFactory.getHomePage().settShirtCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart5(){
+        pageFactory.getHomePage().setJacketCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
+
+    @Test (dependsOnMethods = "login")
+    public void checkCart6(){
+        pageFactory.getHomePage().setOnesieCart();
+        pageFactory.getHomePage().setCart();
+        pageFactory.getCartPage().setCheckout();
+        String exp = "CHECKOUT: YOUR INFORMATION";
+        String act = driver.findElement(By.className("title")).getText();
+        Assert.assertEquals(act, exp);
+        driver.navigate().back();
+        pageFactory.getCartPage().setRemove();
+        driver.navigate().back();
+    }
 }
